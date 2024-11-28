@@ -4,5 +4,8 @@ CREATE TABLE IF NOT EXISTS Usuario(
     email VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL,
     data_nascimento DATE NOT NULL,
-    PRIMARY KEY (id_usuario)
+    id_assinatura INT NOT NULL,
+    PRIMARY KEY (id_usuario),
+    FOREIGN KEY(id_assinatura) REFERENCES Assinatura(id_assinatura)
+
 );
