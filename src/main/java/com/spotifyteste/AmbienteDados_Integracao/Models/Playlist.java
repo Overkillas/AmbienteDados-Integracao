@@ -9,5 +9,6 @@ public class Playlist {
     @Id
     int id_playlist;
     String nome;
-    Usuario usuario;
+    Boolean isVisiblidade; // publica ou privada
+    Biblioteca biblioteca;
 }

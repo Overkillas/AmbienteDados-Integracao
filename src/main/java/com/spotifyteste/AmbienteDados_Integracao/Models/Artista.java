@@ -19,7 +19,6 @@ public class Artista {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     int id_artista;
-    String nome;
     String nome_artistico;
     String biografia;
     String pais_origem;

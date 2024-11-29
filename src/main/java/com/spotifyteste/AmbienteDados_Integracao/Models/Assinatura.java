@@ -23,6 +23,7 @@ public class Assinatura {
     Plano plano;
     //DATA IMPORTADA DO DATE.SQL (NÃO DO UTIL)
     Date data_compra;
+    Boolean isActive; //assinatura ativada ou desativada
     @Enumerated(EnumType.STRING)
     FormaPagamento formaPagamento;
 }
