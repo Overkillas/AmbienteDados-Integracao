@@ -3,7 +3,6 @@ CREATE TABLE IF NOT EXISTS Musica (
     titulo VARCHAR(255) NOT NULL,
     duracao TIME NOT NULL,
     data_lancamento DATE NOT NULL,
-    id_artista INT NOT NULL,
     id_genero_musical INT NOT NULL,
     id_album INT NOT NULL,
     PRIMARY KEY (id_musica),
