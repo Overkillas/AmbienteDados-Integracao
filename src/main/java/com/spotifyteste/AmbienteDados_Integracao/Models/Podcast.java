@@ -1,12 +1,12 @@
 package com.spotifyteste.AmbienteDados_Integracao.Models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
+@Entity
 public class Podcast {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -15,5 +15,8 @@ public class Podcast {
     String descricao;
     Time duracao;
     Date data_lancamento;
+    @ManyToOne
     Artista artista;
+    @ManyToMany(mappedBy = "podcasts", fetch = FetchType.LAZY)
+    List<Biblioteca> bibliotecas;
 }

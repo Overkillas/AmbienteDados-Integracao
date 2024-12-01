@@ -1,15 +1,12 @@
 package com.spotifyteste.AmbienteDados_Integracao.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.Set;
 
-import java.util.Date;
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,4 +19,6 @@ public class Artista {
     String nome_artistico;
     String biografia;
     String pais_origem;
+    @ManyToMany(mappedBy = "artistas", fetch = FetchType.LAZY)
+    Set<Album> albuns;
 }

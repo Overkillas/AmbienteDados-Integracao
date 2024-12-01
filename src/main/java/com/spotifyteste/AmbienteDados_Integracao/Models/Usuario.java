@@ -1,9 +1,6 @@
 package com.spotifyteste.AmbienteDados_Integracao.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,4 +21,7 @@ public class Usuario {
     String email;
     String senha;
     Date data_nascimento;
+    @ManyToOne
+    @JoinColumn(name = "id_assinatura")
+    Assinatura assinatura;
 }

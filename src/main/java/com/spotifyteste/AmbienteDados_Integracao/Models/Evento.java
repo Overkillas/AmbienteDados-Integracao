@@ -1,12 +1,11 @@
 package com.spotifyteste.AmbienteDados_Integracao.Models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Time;
 import java.util.Date;
 
+@Entity
 public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -14,5 +13,6 @@ public class Evento {
     String localizacao;
     Date data;
     Time horario;
+    @ManyToOne
     Artista artista;
 }
