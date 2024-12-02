@@ -28,4 +28,5 @@ public class Artista {
     String pais_origem;
     @ManyToMany(mappedBy = "artistas", fetch = FetchType.LAZY)
     Set<Album> albuns;
+   
 }

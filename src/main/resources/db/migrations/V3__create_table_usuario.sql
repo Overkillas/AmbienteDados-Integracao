@@ -10,3 +10,5 @@ CREATE TABLE IF NOT EXISTS Usuario(
     FOREIGN KEY(id_assinatura) REFERENCES Assinatura(id_assinatura)
 
 );
+CREATE INDEX index_user
+ON usuario (id_usuario);
