@@ -4,3 +4,5 @@ CREATE TABLE IF NOT EXISTS Album (
     data_lancamento DATE NOT NULL,
     PRIMARY KEY (id_album)
 );
+CREATE INDEX index_album
+ON album (id_album);

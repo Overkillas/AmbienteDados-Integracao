@@ -5,3 +5,5 @@ CREATE TABLE IF NOT EXISTS Artista (
     pais_origem VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_artista)
 );
+CREATE INDEX index_artista
+ON artista (id_artista);
