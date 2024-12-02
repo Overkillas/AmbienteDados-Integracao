@@ -18,6 +18,7 @@ public class Usuario {
     @Id
     int id_usuario;
     String nome;
+    String sobrenome;
     String email;
     String senha;
     Date data_nascimento;

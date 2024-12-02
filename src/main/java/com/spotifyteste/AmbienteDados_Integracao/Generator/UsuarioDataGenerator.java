@@ -1,5 +1,6 @@
 package com.spotifyteste.AmbienteDados_Integracao.Generator;
 
+import com.github.javafaker.Faker;
 import com.spotifyteste.AmbienteDados_Integracao.Models.Assinatura;
 import com.spotifyteste.AmbienteDados_Integracao.Models.Usuario;
 import com.spotifyteste.AmbienteDados_Integracao.Repositories.AssinaturaRepository;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+
 @Component
 public class UsuarioDataGenerator implements CommandLineRunner {
 
@@ -20,16 +22,18 @@ public class UsuarioDataGenerator implements CommandLineRunner {
     @Autowired
     private AssinaturaRepository assinaturaRepository;
 
+    private final Faker faker = new Faker();
+
     @Override
     public void run(String... args) throws Exception {
         List<Assinatura> assinaturas = assinaturaRepository.findAll();
-        assinaturaRepository.findAll();
 
-        for (int i = 1; i <= 1500; i++) {
+        for (int i = 0; i < 1500; i++) {
             Usuario usuario = new Usuario();
-            usuario.setNome("Usuário " + i);
-            usuario.setEmail("usuario" + i + "@exemplo.com");
-            usuario.setSenha("senha" + i);
+            usuario.setNome(faker.name().firstName());
+            usuario.setSobrenome(faker.name().lastName());
+            usuario.setEmail(faker.internet().emailAddress());
+            usuario.setSenha(faker.internet().password(8, 16));
             usuario.setData_nascimento(generateRandomDate());
 
             Assinatura assinatura = getRandomAssinatura(assinaturas);
@@ -38,13 +42,13 @@ public class UsuarioDataGenerator implements CommandLineRunner {
             usuarioRepository.save(usuario);
         }
 
-        System.out.println("1500 usuários foram gerados com sucesso!");
+        System.out.println("1500 usuários fictícios foram gerados com sucesso!");
     }
 
     private Date generateRandomDate() {
         Random rand = new Random();
-        long minDay = new Date().getTime() - 60L * 365 * 24 * 60 * 60 * 1000;
-        long maxDay = new Date().getTime() - 20L * 365 * 24 * 60 * 60 * 1000;
+        long minDay = new Date().getTime() - 60L * 365 * 24 * 60 * 60 * 1000; // 60 anos atrás
+        long maxDay = new Date().getTime() - 20L * 365 * 24 * 60 * 60 * 1000; // 20 anos atrás
         long randomTime = minDay + (long) (rand.nextDouble() * (maxDay - minDay));
         return new Date(randomTime);
     }
