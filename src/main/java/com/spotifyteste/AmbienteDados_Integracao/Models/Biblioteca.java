@@ -3,7 +3,16 @@ package com.spotifyteste.AmbienteDados_Integracao.Models;
 import jakarta.persistence.*;
 
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Biblioteca {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -7,6 +7,7 @@ import com.spotifyteste.AmbienteDados_Integracao.Repositories.AssinaturaReposito
 import com.spotifyteste.AmbienteDados_Integracao.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Random;
 
 @Component
+@Order(2)
 public class UsuarioDataGenerator implements CommandLineRunner {
 
     @Autowired

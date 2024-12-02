@@ -21,7 +21,6 @@ public class GeneroMusicalDataGenerator implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        System.out.println("Iniciando o gerador de dados para Gêneros Musicais...");
 
         Faker faker = new Faker();
 
