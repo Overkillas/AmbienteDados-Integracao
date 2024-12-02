@@ -33,7 +33,7 @@ public class Album {
     Date data_lancamento;
     @ManyToMany
     @JoinTable(
-            name = "Album_artista",
+            name = ("artista_album"),
             joinColumns = @JoinColumn(name = "id_album"),
             inverseJoinColumns = @JoinColumn(name = "id_artista")
     )
