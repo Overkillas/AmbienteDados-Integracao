@@ -1,6 +1,5 @@
 package com.spotifyteste.AmbienteDados_Integracao.Models;
 
-import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

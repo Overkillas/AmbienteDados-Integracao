@@ -22,8 +22,8 @@ public class ArtistaDataGenerator implements CommandLineRunner {
     public void run(String... args) {
         List<Artista> artistas = new ArrayList<>();
 
-        // Gera 500 artistas fictícios
-        for (int i = 0; i < 500; i++) {
+       
+        for (int i = 0; i < 100; i++) {
             Artista artista = new Artista();
             artista.setNome_artistico(faker.artist().name());
             artista.setBiografia(faker.lorem().paragraph());
@@ -31,10 +31,10 @@ public class ArtistaDataGenerator implements CommandLineRunner {
             artistas.add(artista);
         }
 
-        // Salva todos os artistas em um único batch
+       
         artistaRepository.saveAll(artistas);
 
-        // Feedback final
-        System.out.println("500 artistas fictícios foram gerados com sucesso!");
+        
+        System.out.println("100 artistas fictícios foram gerados com sucesso!");
     }
 }

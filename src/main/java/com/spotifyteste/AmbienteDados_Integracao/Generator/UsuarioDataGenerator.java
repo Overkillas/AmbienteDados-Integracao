@@ -28,7 +28,7 @@ public class UsuarioDataGenerator implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<Assinatura> assinaturas = assinaturaRepository.findAll();
 
-        for (int i = 0; i < 1500; i++) {
+        for (int i = 0; i < 100; i++) {
             Usuario usuario = new Usuario();
             usuario.setNome(faker.name().firstName());
             usuario.setSobrenome(faker.name().lastName());
@@ -42,7 +42,7 @@ public class UsuarioDataGenerator implements CommandLineRunner {
             usuarioRepository.save(usuario);
         }
 
-        System.out.println("1500 usuários fictícios foram gerados com sucesso!");
+        System.out.println("100 usuários fictícios foram gerados com sucesso!");
     }
 
     private Date generateRandomDate() {
