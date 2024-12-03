@@ -23,12 +23,6 @@ public class BibliotecaDataGenerator implements CommandLineRunner {
     @Override
     public void run(String... args) {
         List<Usuario> usuarios = usuarioRepository.findAll();
-
-        if (usuarios.isEmpty()) {
-            System.out.println("Nenhum usuário encontrado no banco de dados.");
-            return;
-        }
-
         
         Collections.shuffle(usuarios);
 
