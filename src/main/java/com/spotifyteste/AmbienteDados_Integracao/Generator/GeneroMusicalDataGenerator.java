@@ -5,6 +5,7 @@ import com.spotifyteste.AmbienteDados_Integracao.Repositories.GeneroMusicalRepos
 import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 @Component
+@Order(4)
 public class GeneroMusicalDataGenerator implements CommandLineRunner {
 
     @Autowired
